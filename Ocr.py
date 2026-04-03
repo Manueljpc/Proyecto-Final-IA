@@ -1,14 +1,20 @@
 import pytesseract
 from PIL import Image
 
-#para cargar la imagen
-image = Image.open("prueba_ocr/prueba_ocr.png")
+
+try: 
+    
+    #para cargar la imagen
+    image = Image.open("prueba_ocr/prueba_ocr.png")
 
 
-#cargar modelo
-text = pytesseract.image_to_string(image, lang = 'spa')
+    #cargar modelo
+    text = pytesseract.image_to_string(image, lang = 'spa')
 
-#mostrar texto
+    #mostrar texto
 
-print("texto detectado:")
-print(text)
+    print("texto detectado:")
+    print(text)
+
+except Exception as e:
+    print("error",e)
