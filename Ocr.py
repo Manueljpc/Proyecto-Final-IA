@@ -5,7 +5,7 @@ from PIL import Image
 try: 
     
     #para cargar la imagen
-    image = Image.open("prueba_ocr/prueba_ocr1.png")
+    image = Image.open("prueba_ocr/prueba_ocr3.jpg")
 
 
     #cargar modelo
