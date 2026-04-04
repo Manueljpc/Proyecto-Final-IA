@@ -6,7 +6,7 @@ from PIL import Image
 try: 
     
     #para cargar la imagen
-    image = cv2.imread("prueba_ocr/prueba_ocr2.png")
+    image = cv2.imread("prueba_ocr/prueba_ocr1.png")
     
     if image is None:
         raise Exception("no se pudo cargar la imagen")
