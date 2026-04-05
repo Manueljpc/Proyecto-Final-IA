@@ -5,7 +5,7 @@ resumidor = pipeline("summarization", model = "t5-small")
 
 def resumir_texto(texto):
     try:
-    
+    #para generar el resumen
         resumen = resumidor(
         
         texto,
@@ -17,5 +17,5 @@ def resumir_texto(texto):
     
         return resumen[0]['summary_text']
     
-    except exception as e:
+    except Exception as e:
         return f"error al resumir:{e}"
