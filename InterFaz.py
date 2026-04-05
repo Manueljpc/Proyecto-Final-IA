@@ -21,3 +21,23 @@ def procesar_imagenes(imagen_ruta):
     return texto_extraido , resultado_resumen
     
     
+# interfaz grafica
+
+with gr.Blocks(titulo = "SmartNote AI") as interfaz:
+    gr.Markdown("sube una foto o imagen de tus apuntes para resumirlos")
+    
+    #entrada de imagen
+with gr.Row.Column():
+    subir_imagen = gr.Image(type="filepath", label="foto de tus apuntes")
+    boton_ejecutar = gr.Button("procesar imagenes", variant="primary")    
+    #SALIDA DE texto
+with gr.Column():
+    salida_texto = gr.Textbox(label = "texto identificado", lines=8)
+    salida_resumen = gr.Textbox(label="resumen", lines=5)
+    
+    # accion al hacer click al boton   
+    boton_ejecutar.click(
+        fn=procesar_imagenes,
+        inputs=subir_imagen,
+        outputs=[salida_texto,salida_resumen]
+    )
