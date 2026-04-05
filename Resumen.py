@@ -4,6 +4,7 @@ from transformers import pipeline
 resumidor = pipeline("summarization", model = "t5-small")
 
 def resumir_texto(texto):
+    
     try:
     #para generar el resumen
         resumen = resumidor(
