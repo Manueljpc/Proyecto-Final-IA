@@ -12,7 +12,7 @@ def extraer_texto(ruta_imagen):
     
         #para convertir a gris 
         gray = cv2.cvtColor (image, cv2.COLOR_BGR2GRAY)
-        #mejora el ocr
+        #mejora el ocr separando las letras del fondo
         _, thresh = cv2.threshold(gray,0,255,cv2.THRESH_BINARY + cv2.THRESH_OTSU)
     
         image_pil = Image.fromarray(thresh)

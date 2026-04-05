@@ -2,7 +2,7 @@ from Ocr import extraer_texto
 from Resumen import resumir_texto
 
 try :
-    ruta = "prueba_ocr/prueba_ocr7.jpeg"
+    ruta = "prueba_ocr/prueba_ocr.png"
     
     #OCR
     texto = extraer_texto(ruta)
