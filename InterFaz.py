@@ -22,7 +22,7 @@ def procesar_imagenes(imagen_ruta):
     
     #limpiar campos
 def limpiar_campos():
-    return None , ","
+    return gr.update(value = None) ,gr.update(value = "") , gr.update (value = "")
     
 # interfaz grafica
 
@@ -35,10 +35,10 @@ with gr.Blocks(title = "SmartNote AI") as interfaz:
     
         with gr.Column():
             subir_imagen = gr.Image(type="filepath", label="foto de tus apuntes", sources=["upload"])
-            boton_ejecutar = gr.Button("procesar imagenes", variant="primary")    
+              
             
             with gr.Row():
-                boton_limpiar = gr.Button("cerrar/limpiar", variant="secondary")
+                boton_limpiar = gr.Button("limpiar", variant="secondary")
                 boton_ejecutar = gr.Button("procesar notas",variant="primary")
             
     #SALIDA DE texto
@@ -57,7 +57,7 @@ with gr.Blocks(title = "SmartNote AI") as interfaz:
     
     boton_limpiar.click(
         fn=limpiar_campos,
-        inputs = []
+        inputs = [],
         outputs = [subir_imagen , salida_texto ,salida_resumen]
     )
 if __name__ == "__main__":
