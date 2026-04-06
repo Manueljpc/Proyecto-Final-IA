@@ -4,7 +4,8 @@ from transformers import pipeline
 resumidor = pipeline("summarization", model = "google/mt5-small")
 
 def resumir_texto(texto):
-    
+    if not texto or len(texto) < 50:
+        return "el texto es demasiado corto"
     
     
     try:
@@ -15,12 +16,13 @@ def resumir_texto(texto):
         resumen = resumidor(
         
         entrada_texto,
-        max_length = 250,
+        max_length = 300,
         min_length = 80,
-        do_sample = False,
-        num_beams = 4, # permie que la ia piense en varias opciones antes de escribir
-        length_penalty = 2.0, # con un valor mayor a 1.0 hace que la ia escriba frases mas largas
-        early_stopping = True # para cuando la frase tiene sentido
+        do_sample = True,
+        top_k = 50,
+        top_p = 0.90, 
+        punctuation_penalty = 1.0,
+    
         
         )
     
