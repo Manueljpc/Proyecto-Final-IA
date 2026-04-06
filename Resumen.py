@@ -1,7 +1,7 @@
 from transformers import pipeline
 
 #para cargar el modelo
-resumidor = pipeline("summarization", model = "t5-small")
+resumidor = pipeline("summarization", model = "google/mt5-small")
 
 def resumir_texto(texto):
     
