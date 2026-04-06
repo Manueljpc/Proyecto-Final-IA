@@ -15,7 +15,7 @@ def procesar_imagenes(imagen_ruta):
     if "Error Ocr" in texto_extraido or not texto_extraido.strip():
         return texto_extraido, "no se pudo generar un resumen debido a errores en el texto."
     
-    #para llamar al sesumidor
+    #para llamar al resumidor
     print("generando resumen")
     resultado_resumen = resumir_texto(texto_extraido)
     return texto_extraido , resultado_resumen
@@ -27,8 +27,8 @@ def limpiar_campos():
 # interfaz grafica
 
 with gr.Blocks(title = "SmartNote AI") as interfaz:
-    gr.Markdown("SmartNote")
-    gr.Markdown("sube una foto o imagen de tus apuntes para resumirlos")
+    gr.Markdown("<h1 style='text-align: center;'>SmartNote AI</h1>")
+    gr.Markdown(" sube una foto o imagen de tus apuntes para resumirlos")
     
     #entrada de imagen
     with gr.Row():
@@ -39,7 +39,7 @@ with gr.Blocks(title = "SmartNote AI") as interfaz:
             
             with gr.Row():
                 boton_limpiar = gr.Button("limpiar", variant="secondary")
-                boton_ejecutar = gr.Button("procesar notas",variant="primary")
+                boton_ejecutar = gr.Button("procesar texto",variant="primary")
             
     #SALIDA DE texto
         with gr.Column():
@@ -61,4 +61,6 @@ with gr.Blocks(title = "SmartNote AI") as interfaz:
         outputs = [subir_imagen , salida_texto ,salida_resumen]
     )
 if __name__ == "__main__":
-    interfaz.launch()
+    # share=True crea el link público
+    # show_error=True ayuda a ver si algo falla desde el cel
+    interfaz.launch(share=True, show_error=True)

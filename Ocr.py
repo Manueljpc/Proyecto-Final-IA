@@ -20,7 +20,7 @@ def extraer_texto(ruta_imagen):
         #cargar modelo
         text = pytesseract.image_to_string(image_pil, lang = 'spa', config='--psm 6')
         return text
-        #mostrar texto
+        
 
        
     except Exception as e:

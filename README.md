@@ -26,3 +26,28 @@ una vez que el texto es extraido, la aplicacion generara un resumen con las idea
 2. La aplicación utiliza inteligencia artificial para reconocer el texto en la imagen.
 3. Luego, procesa ese texto y genera un resumen automático.
 4. Finalmente, muestra al usuario el texto detectado y su resumen.
+
+
+## Pasos para utilizar smartNotes AI
+
+lo primero es tener instalado Tessereact OCR en tu maquina
+
+en linux lo descargas poniendo lo siguiente en la terminal:
+
+### sudo apt update && sudo apt install tesseract-ocr tesseract-ocr-spa
+
+en windows debe descargar e instalar el ejecutable desde UB Mannheim y marcar la casilla de "Spanish Data"
+
+
+# instalar librerias
+1. una vez hecho esto tiene que abrir una terminal en la carpeta del proyecto  y ejecutar
+### pip install -r requirements.txt
+2. ejecutar el archivo principal
+### principal.py
+3. para acceder a la interfaz
+cuando aparezca un mensaje en la terminal con una IP lo habre en su navegador
+### http://127.0.0.1
+
+
+
+

@@ -17,7 +17,7 @@ def resumir_texto(texto):
         resumen = resumidor(
         
         entrada_texto,
-        max_length = 150,
+        max_length = 80,
         min_length = 40,
         do_sample = False,    
         )
