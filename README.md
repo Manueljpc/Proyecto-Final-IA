@@ -50,4 +50,9 @@ cuando aparezca un mensaje en la terminal con una IP lo habre en su navegador
 
 
 
+link del video
+https://youtu.be/5nzggMQZTXg
+
+
+
 
